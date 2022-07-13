@@ -8,3 +8,5 @@ React Practices
 7. 통합개발 (Integration Dev) **
     FE(React) + BE(spring boot, API Server)
     FE(React) + BE(node)
+8. [참고1] webpack-practices *
+9. [참고2] babel-practices *
