@@ -30,7 +30,7 @@ function Clock() {
             // {' : '}
             // {('0'+minutes).slice(-2)}
             // {' : '}
-            // {('0'+seconds).slice(-2)}
+            // {('0'+seconds).slice(-2)} 
             // {' '}
             // {hours > 12 ? 'PM' : 'AM'} }
         // </div>
