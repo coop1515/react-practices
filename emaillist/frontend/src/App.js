@@ -1,11 +1,15 @@
 import React from 'react';
+import styles from './assets/css/styles.css';
+import Searchbar from './searchbar';
+import Emaillist from './emaillist';
 import emails from './assets/json/data.json';
 
 function App() {
-    // console.log(emails);
+
     return (
-        <div id ='App'>
-            <h1>emaillist</h1>
+        <div className = {styles.App}>
+            <Searchbar />                    
+            <Emaillist emails={emails} />
         </div>
     );
 }
