@@ -8,14 +8,13 @@ ex01: Property(props)
 01. FoodList: 클래스 컴포넌트
 02. FoodList: Data Flow(Top -> Down): 클래스 컴포넌트
 03. FoodList: Data Flow(Top -> Down): 함수 컴포넌트
-04. Validation
-
+04. Property Validation
 
 
 =============================================================
 1. 설치
     [ex08]$ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
-    [ex08]$ npm i react react-dom
+    [ex08]$ npm i react react-dom prop-types
 
 2. 설정
 babel.config.json
