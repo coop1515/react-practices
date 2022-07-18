@@ -1,6 +1,6 @@
 ex03: Component - React Event
 
-1) Inline Styling: 01
+1) Inline Handler
 2) Function Handler
 3) Synthetic Event(Event 합성)
 4) Event Handler 예제
