@@ -1,0 +1,12 @@
+import React from 'react';
+import styles from './assets/css/Banner01.css';
+
+
+function Banner01() {
+    return (
+    
+            <h1 className={styles.Header}> Hello World</h1>
+    );
+}
+
+export default Banner01;
