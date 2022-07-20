@@ -2,18 +2,51 @@ import React, { useState } from 'react';
 import './assets/Form.css';
 
 export default function Form() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
+    const onChnageNameInput = e => {
+        setName(e.target.value);
+        // 10자 제한
+        setName(e.target.value.substr(0,10));
+    }
+
+    const onChangeEmailInput = e => {
+        setEmail(e.target.value);
+        // exit api
+    }
+
+    const onChangePasswordInput = e => {
+        setPassword(e.target.value);
+        
+    }
 
     return (
         <form id="joinForm" name="joinForm" method="post" action="/do/not/post">
             <label htmlFor="name">이름</label>
-            <input id="name" name="name" type="text" value={ "" } />
+            <input
+                 id="name"
+                 name="name" 
+                 type="text" 
+                 value={name}
+                 onChange={onChnageNameInput} />
 
             <label htmlFor="email">이메일</label>
-            <input id="email" name="email" type="text" value={ "" }/>
+            <input 
+                id="email" 
+                name="email" 
+                type="text" 
+                value={email}
+                onChange={onChangeEmailInput}/>
 
             <label htmlFor="password">패스워드</label>
-            <input id="password" name="password" type="password" value={ "" } />
+            <input 
+                id="password" 
+                name="password" 
+                type="password" 
+                value={password}
+                onChange={onChangePasswordInput} />
 
             <fieldset>
                 <legend>성별</legend>
