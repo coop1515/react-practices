@@ -2,7 +2,15 @@ import React from 'react';
 import './assets/Form.css';
 
 export default function Form() {
+    const onSubmit = e => {
+        e.preventDefault();
 
+        // validation code...
+
+        console.log(e.target.email.value, ":", e.target.password.value);
+
+        // ajax 로그인
+    }
 
     return (
         <form
