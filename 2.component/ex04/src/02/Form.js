@@ -4,6 +4,7 @@ import './assets/Form.css';
 export default function Form() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [validEmail, setVaildEmail] = useState(false);
     const [password, setPassword] = useState("");
 
     const onChnageNameInput = e => {
@@ -14,7 +15,9 @@ export default function Form() {
 
     const onChangeEmailInput = e => {
         setEmail(e.target.value);
-        // exit api
+        // check email format(account@mysite.com)
+        const re = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{1,3}$/g;
+        setVaildEmail(re.test(email));
     }
 
     const onChangePasswordInput = e => {
@@ -38,7 +41,7 @@ export default function Form() {
                 name="email" 
                 type="text" 
                 value={email}
-                onChange={onChangeEmailInput}/>
+                onChange={onChangeEmailInput}/> {validEmail ? "ok" : "no"}
 
             <label htmlFor="password">패스워드</label>
             <input 
@@ -47,6 +50,7 @@ export default function Form() {
                 type="password" 
                 value={password}
                 onChange={onChangePasswordInput} />
+            
 
             <fieldset>
                 <legend>성별</legend>
