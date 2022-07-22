@@ -51,7 +51,7 @@ export default function App() {
             <Modal
                 isOpen={modal03IsOpen}
                 onRequestClose={ () => setModal03IsOpen(false) }
-                shouldCloseOnOverlayClick={ false }
+                shouldCloseOnOverlayClick={ false } // 바깥화면 클릭해서 종료시키겠냐?
                 contentLabel="modal03 example">
                 <h1>modal03</h1>
                 <button onClick={ () => setModal03IsOpen(false) }>
