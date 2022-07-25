@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 export default class LifeCircle extends Component {
-    constructor() {
-        super(...arguments);
+    constructor(props) {
+        super(props);
         this.h3Ref = null;
         this.state = {
             color: null
