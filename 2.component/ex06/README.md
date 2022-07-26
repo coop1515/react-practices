@@ -48,7 +48,7 @@ $ npm i react-addons-update
 ```javascript
 import update from 'react-addons-update';
 
-const newObject = update(objectInState, { [WHERE] : { [WHAT]: updateValue } });
+const newObject = update(objectInState, { [WHERE] : { [HOW]: updateValue } });
 ```
 
 4. 업데이트 형식
