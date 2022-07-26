@@ -3,12 +3,13 @@ import SevenSegmentLED from "./SevenSegmentLED";
 import SessionAmPm from "./SessionAmPm";
 import './assets/scss/Clock.scss';
 
-export default function Clock({message, hours, minutes, seconds}) {
+export default function Clock({message, hours, minutes, seconds, ticks}) {
 
 
 
     return (
         <div className={'clock-display'}>
+            <span>{ticks}</span>
             <h2>{message}</h2>
             <div className={'Clock'}>
                 <SevenSegmentLED number={hours} colon={true}/>
