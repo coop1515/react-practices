@@ -12,13 +12,13 @@ export default function App() {
             hours: ('0'+(hours > 12 ? hours - 12 : hours)).slice(-2),
             minutes: ('0'+now.getMinutes()).slice(-2),
             seconds: ('0'+now.getSeconds()).slice(-2),
-            session: (hours > 12 ? 'pm' : 'am'),
-            ticks: 0
+            session: (hours > 12 ? 'pm' : 'am')
         }
     }
 
     const [currentTime, setCurrentTime] = useState(getCurrentClockTime());
     const [ticks, setTicks] = useState(0);
+    
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(getCurrentClockTime());
