@@ -5,8 +5,10 @@ module.exports = function(env) {
         mode: 'development',
         entry: path.resolve(`src/index.js`),
         output: {
-            path: path.resolve('public'),
-            filename: 'main.js',
+            // path: path.resolve('public'),
+            path: path.resolve('../backend/src/main/resources'),
+            // filename: 'main.js',
+            filename: 'assets/js/main.js',
             assetModuleFilename: 'assets/images/[hash][ext]'
         },
         module: {
@@ -37,6 +39,10 @@ module.exports = function(env) {
         devServer: {
             host: '0.0.0.0',
             port: 9090,
+            proxy: {
+                '/api': 'http://localhost:8080'
+            },
+            
             liveReload: true,
             hot: true,
             compress: true

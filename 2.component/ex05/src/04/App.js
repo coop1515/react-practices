@@ -19,16 +19,24 @@ export default function App() {
     const [currentTime, setCurrentTime] = useState(getCurrentClockTime());
     const [ticks, setTicks] = useState(0);
     
+    // useEffect(() => {
+    //      const interval = setInterval(() => {
+    //     //    setTimeout(() => { // 한번밖에 작동을 안함.
+    //         setCurrentTime(getCurrentClockTime());
+    //         setTicks(prevticks => prevticks+1)
+    //     }, 1000);
+        
+    //     return (()=>{
+    //         clearInterval(interval);
+    //     });
+    // }, []);
+
     useEffect(() => {
-        const interval = setInterval(() => {
+        setTimeout(() => {
             setCurrentTime(getCurrentClockTime());
             setTicks(prevticks => prevticks+1)
         }, 1000);
-        
-        return (()=>{
-            clearInterval(interval);
-        });
-    }, []);
+    }, [currentTime]);
 
     return (
         <>
