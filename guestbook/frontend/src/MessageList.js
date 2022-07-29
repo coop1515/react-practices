@@ -7,7 +7,7 @@ import modalStyles from "./assets/scss/modal.scss";
 
 Modal.setAppElement('body');
 
-export default function MessageList({messages, notifyMessage}) {
+export default function MessageList({messages, callback/*notifyMessage*/}) {
     const refForm = useRef(null);
     const [modalData, setModalData] = useState({isOpen: false});
 
@@ -24,15 +24,15 @@ export default function MessageList({messages, notifyMessage}) {
                 return;
             }
 
-            const response = await fetch(`/api/${modalData.messageNo}`, {
+            const response = await fetch(`/api/guestbook/${modalData.messageNo}`, {
                 method: 'delete',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'applcation/json'
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify({password: e.target.password.value})
+                body: `password=${e.target.password.value}`
             });
-
+            // console.log(e.target.password.value);
             if (!response.ok) {
                 throw `${response.status} ${response.statusText}`;
             }
@@ -51,13 +51,14 @@ export default function MessageList({messages, notifyMessage}) {
             }
 
             setModalData({isOpen: false, password: ''});
-            notifyMessage.delete(json.data);
+            callback(json.data);
+            // notifyMessage.delete(json.data);
         } catch (err) {
             console.error(err);
         }
     }
 
-    const notifyDeleteMessage = function (no) {
+    const showPasswordModal = function (no) {
         setModalData({
             label: '글 작성시 입력했던 비밀번호를 입력하세요.',
             password: '',
@@ -73,7 +74,7 @@ export default function MessageList({messages, notifyMessage}) {
                                                   no={message.no}
                                                   name={message.name}
                                                   message={message.message}
-                                                  notifyMessage={notifyDeleteMessage}/>)}
+                                                  callback={showPasswordModal}/>)}
             </ul>
             <Modal
                 isOpen={modalData.isOpen}
@@ -96,6 +97,7 @@ export default function MessageList({messages, notifyMessage}) {
                             placeholder={'비밀번호'}
                             value={modalData.password}
                             onChange={(e) => setModalData(Object.assign({}, modalData, {password: e.target.value}))}
+                            
                         />
                     </form>
                 </div>
