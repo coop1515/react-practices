@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import FoodList from './FoodList';
+import {createClient} from 'redis';
+import 'url';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        this.foods = [{
-            no: 1,
-            name: 'Egg',
-            quantity: 20
-        },{
-            no: 2,
-            name: 'Milk',
-            quantity: 10
-        },{
-            no: 3,
-            name: 'Bread',
-            quantity: 7
-        }]
+        this.subscriber = createClient({
+            url: 'redis://192.168.10.10:6379'
+        })
+        .duplicate();
+
+        (async () => {
+            await subscriber.connect();
+            await subscriber.subscribe('testroom02', (message) => {
+              console.log(message);
+            });
+        })();
     }
+
+    
     render() {
+ 
         return (
             <div id='App'>
                 <FoodList

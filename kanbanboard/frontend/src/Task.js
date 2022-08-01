@@ -6,10 +6,10 @@ function Task({task}) {
     const onChangeCheckbox = e => {setcheckbox(checkbox=>!checkbox)}
     return (
         <div>
-            <li className={styles.TaskList__Task}>
+            <li className={styles.Task}>
                   <input type='checkbox' checked={checkbox} onChange={onChangeCheckbox} />
                   {task.name}
-                  <a href='#' className={styles.TaskList__Task__remove}></a>
+                  <a href='#' className={styles.Task__remove}></a>
             </li> 
         </div>
     );

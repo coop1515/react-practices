@@ -97,7 +97,6 @@ export default function MessageList({messages, callback/*notifyMessage*/}) {
                             placeholder={'비밀번호'}
                             value={modalData.password}
                             onChange={(e) => setModalData(Object.assign({}, modalData, {password: e.target.value}))}
-                            
                         />
                     </form>
                 </div>
