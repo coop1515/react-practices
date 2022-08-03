@@ -28,4 +28,3 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.status(HttpStatus.OK).body(JsonResult.fail(errors.toString()));
 	}
 }
-
