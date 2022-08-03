@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = function(env) {
     return {
-        mode: 'development',
+        mode: 'none',
         entry: path.resolve(`src/index.js`),
         output: {
-            path: path.resolve('public'),
-            filename: 'main.js',
+            path: path.resolve('../backend/src/main/resources'),
+            filename: 'assets/js/main.js',
             assetModuleFilename: 'assets/images/[hash][ext]'
         },
         module: {
@@ -33,7 +33,7 @@ module.exports = function(env) {
                 type: 'asset/resource'
             }]
         },
-        
+        devtool: "eval-source-map",
         devServer: {
             host: '0.0.0.0',
             port: 9090,
@@ -42,6 +42,7 @@ module.exports = function(env) {
             },
             liveReload: true,
             hot: true,
-            compress: true
+            compress: true,
+            historyApiFallback: true
     }}
 }
