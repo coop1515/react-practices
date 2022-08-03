@@ -7,7 +7,7 @@ import Guestbook from "./component/Guestbook";
 import Join from "./component/user/Join";
 import Login from "./component/user/Login";
 import Settings from "./component/user/Settings";
-import About from "./component/about/About";
+import About from "./component/about";
 import Me from "./component/about/Me"
 import Error404 from './component/error/Error404';
 import './assets/scss/App.scss'
