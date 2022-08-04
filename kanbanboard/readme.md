@@ -11,6 +11,8 @@ $ mvn -f kanbanboard/backend clean package
 2. 실행:
   ```
   $ java -jar kanbanboard/backend/target/kanbanboard07.jar
+  $ java -D spring.profiles.active=production -jar kanbanboard/backend/target/kanbanboard07.jar
+
   ```
 
 ## frontend
