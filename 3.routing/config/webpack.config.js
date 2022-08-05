@@ -6,7 +6,7 @@ module.exports = function(env){
     entry:path.resolve(`src/${env.src}/index.js`),
     output: {
         path: path.resolve('public'),
-        filename: 'main.js',
+        filename: 'assets/js/main.js',
         assetModuleFilename:'assets/images/[hash][ext]'
     },
     module:{
